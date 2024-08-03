@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Document</title>
+</head>
+
+<body>
+The content of the document......
+</body>
+    <input type="text" name = "" id = "todo">
+    <button  id = "submitButton">Add Todo</button>
+    <div id =result>
+
+    </div>
+
+    <script>
+        const submitButton = document.getElementById("submitButton")
+        submitButton.addEventListener("click",addTodo)
+
+        function addTodo()
+        {
+            const valueTodo = document.getElementById("todo").value
+            const p = document.createElement("p")
+            p.innerHTML = valueTodo
+            const result =  document.getElementById("result") // no dot value because only string
+            result.appendChild(p)
+            // หรือจะ result.innerHtml +=`<p>${valueTodo}<p/>`
+
+        }
+    </script>
+</html>
